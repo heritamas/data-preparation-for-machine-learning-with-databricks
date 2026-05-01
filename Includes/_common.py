@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 def __validate_libraries():
     import requests
     try:
@@ -54,6 +58,11 @@ __install_libraries()
 # COMMAND ----------
 
 # MAGIC %pip $pip_command
+# MAGIC %pip install databricks-feature-engineering
+
+# COMMAND ----------
+
+dbutils.library.restartPython()
 
 # COMMAND ----------
 
